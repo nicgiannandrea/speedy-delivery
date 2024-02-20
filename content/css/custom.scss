@@ -1,0 +1,1464 @@
+/*!
+ * @license
+ * Copyright c 2017 Xyleme, Inc., 700 17th Street, Suite 1950 Denver, CO. 80202 USA.
+ * All rights reserved.
+ *
+ * This file and related documentation are protected by copyright and
+ * are distributed under licenses regarding their use, copying, distribution,
+ * and decompilation. No part of this product or related documentation may
+ * be reproduced or transmitted in any form or by any means, electronic or
+ * mechanical, for any purpose, without the express written permission of
+ * Xyleme, Inc.
+*/
+
+/* mcw
+   VEXED-168 - VEX EDR FAQs Styles
+   https://www.vexrobotics.com/vexedr/support/vexedr-support-faqs
+*/
+
+
+html, body, #PageBody, .PageBody, .List, .CustomNote, a, a:hover {
+	font-family: 'aktiv-grotesk','Open Sans','Verdana', sans-serif;
+}
+
+html, body, div, #PageBody, .List, .RichText, div {
+	color: #424242;
+}
+
+a {
+	color: #D22630;
+}
+
+a:hover {
+	color: #D22630;
+}
+
+a:visited {
+	color: #D22630;
+}
+
+.Button .SVGIcon {
+    fill: #D22630;
+}
+
+.Button {
+	color: #D22630;
+}
+
+.Button:hover, .Button:active {
+  color: #fff;  
+  background: #D22630;
+}
+
+.PopupWrapper .PopupButtonsWrapper .PopupButtons .PopupButton {
+    border: 2px solid #D22630;
+    color: #D22630;
+}
+
+.PopupWrapper .PopupButtonsWrapper .PopupButtons .PopupButton:hover, .PopupWrapper .PopupButtonsWrapper .PopupButtons .PopupButton:active {
+    color: #ffffff;
+    background: #D22630;
+}
+
+
+
+//Custom List Item 1
+.List .ListItems.Custom1 {
+  list-style-type: none;
+  margin: 0 0 0 25px;
+}
+
+.ListItems.Custom1 .ListItem::before{
+  content:"☐";
+  padding-right: 15px;
+}
+
+
+//Start of custom code
+.FrequentlyAskedQuestions .FAQPrefix {
+  width: 25px;
+  font-weight: bold;
+  vertical-align: top;
+  float: left;
+  margin-left: -25px;
+
+  /* Use this to get the Xyleme rendered "Q" or "A" to vanish */
+  /* https://blog.escapecreative.com/how-to-replace-text-with-css/ */
+  visibility: hidden;
+  position: relative;
+
+  /* https://www.vexrobotics.com/vexedr/support/vexedr-support-faqs */
+  /* Styles from .plus rule in VEX css */
+  z-index: 5;
+  margin-top: -5px;
+  font-size: 2em;
+  line-height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.FrequentlyAskedQuestions .FAQQuestion {
+  cursor: pointer; 
+}
+
+/* Override ":" after content */
+.FrequentlyAskedQuestions .FAQShortAnswer .FAQPrefix::after {
+  content: "" !important;
+  display: none;
+}
+
+.FrequentlyAskedQuestions .FAQQuestion .FAQPrefix::after {
+  /* Use this to get the "+" to appear where the Xyleme rendered "Q" would go */
+  /* https://blog.escapecreative.com/how-to-replace-text-with-css/ */
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "+" !important;
+}
+
+/* Click support, brought over from https://www.vexrobotics.com/vexedr/support/vexedr-support-faqs */
+/* Styles from .answers rule in VEX css */
+.FrequentlyAskedQuestions .FAQShortAnswer > div {
+  background: #ccc;
+  padding: 0px 15px;
+  margin: 5px 0;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: .7s ease;
+  -moz-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+}
+
+/* Styles from .questions:checked ~ .answers rule in VEX css */
+.FrequentlyAskedQuestions .FAQQuestion.Clicked + .FAQShortAnswer > div {
+  height: auto;
+  opacity: 1;
+  padding: 15px;
+}
+
+/* Styles from .questions:checked ~ .plus rule in VEX css */
+.FrequentlyAskedQuestions .FAQQuestion.Clicked .FAQPrefix {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* end VEXED-168 - VEX EDR FAQs Styles */
+
+// Table Themes
+
+/* Custom styles for Data Log tables */
+
+.Table.DataLog tbody {
+  float: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Table.DataLog .TableRow.TableHeaderRow {
+    display: inline-flex;
+  }
+}
+
+/* End custom styles for Data Log tables */
+
+/* Style for Parts List */
+.Table.PartsList .TableCell {
+    padding: 0 0px;
+}
+
+// Custom Note Theme
+
+/* Style for standards */
+.CustomNote.AP_standards{
+  
+	/* remove box-shadow*/
+	box-shadow: 0 0 0;
+  	border: 0px solid;
+  	background-color: #ededed;
+  	border-left: 10px solid #D22630;
+ 	margin: 0;
+    padding: 0 1.5em;
+  	
+  	.List{
+    	.ListPreamble{
+        	color: black;
+          	font-weight: bold;
+          	margin: 1em 0;
+        }
+      
+        .ListItems{
+        	padding-left: 0 !important;
+          
+            &.Bullet {
+          		padding-left: 2em !important;
+            }          
+          	li {
+            	margin: 0;
+            }
+            li .RichText{
+            	margin: 0;
+            }
+        }
+    }
+  
+}
+
+.CustomNote.AP_standards:first-of-type {
+    margin-top: 2em;
+}
+
+
+/* Style for overview properties*/
+.CustomNote.AP_preview_splash{
+  	
+  	display: flex;
+  	flex-direction: row;
+  
+	/* remove box-shadow*/
+	box-shadow: 0 0 0;
+  	border: 0px solid;
+  	background-color: #ededed;
+  
+  	padding: 0;
+  	margin: 1.5em 0;
+	
+  
+	.Icon{
+    	float: none;
+      	order: 1;
+        overflow: hidden;
+      	max-width: 400px; /*Observable width of the splash image*/
+      	min-width: 350px;
+        height: auto; /*fill .Icon to rest of the customNote box*/
+      	background-color: #fff;
+        border: 1px solid #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      	
+      	img{
+        	height: auto !important; /*fill image to rest of .Icon*/
+            width: 100% !important;
+          	position: relative;	
+        }
+    }
+  
+    .Content{
+    	order: 2;
+      	padding: 1.5em;
+      
+    	ul.ListItems.NoBullet{
+        	/* Makes inline list of small blocks */
+          	/* Most appropriate for a set of keywords */
+          	
+          	border-bottom: 1px solid #cccccc;
+          	padding: 0 0 0.8em 0 !important;
+          	text-align: center;
+            
+          
+          	li{
+            	display: inline;
+              	border-right:1px solid #afafaf;
+              	padding: 0 7px 0 7px;
+                
+                color: #636363;
+                font-weight: bold;
+            }
+          
+          		li:last-of-type{		
+		    	border:none;
+            }
+            
+        }
+      	
+        .List{
+        	.ListPreamble{
+              text-transform: uppercase;
+              color: #D22630;
+              font-size: 1.2em;
+              margin: .5em 0;
+          	}
+          	
+          	ul.ListItems.Bullet{
+              	/* Reduces gap between Preamble and the list */
+            	padding: 0;
+                margin-top: 0; 
+            }
+          	
+        }
+      
+      	.List:nth-of-type(2){
+          	
+          	margin-bottom: 20px; /*gap between list box*/
+          
+			ul.ListItems.Bullet{
+        	/*second ul of AP_preview_splash-themed custom note*/
+
+            	li{
+                	display:inline;
+                	list-style-type: none;
+                    
+                    .RichText{
+                    	line-height: 1em;
+                    }
+                }
+            }
+        } /*end: .List:nth-of-type(2)*/
+      
+      	.List:nth-of-type(3){
+          	
+          	margin-bottom: 20px; /*gap between list box*/	
+          
+			ul.ListItems.Bullet{
+        	/*third ul of AP_preview_splash-themed custom note*/
+
+            	li{
+                	display:inline;
+                	list-style-type: none;
+                    padding-left: 5px;
+                }
+              
+              li:first-child{ padding-left: 0px;}
+              
+                li::after{
+                	content: ",";
+                   
+                }
+                li:last-child::after{
+                    content: "";
+                }
+              
+            }
+        } /*end: .List:nth-of-type(2)*/
+      
+      
+    }
+}
+
+@media only screen and (max-width: 720px) {
+  .CustomNote.AP_preview_splash .Icon {
+  	min-width: 272px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  
+  .CustomNote.AP_preview_splash {
+  	    flex-direction: column;
+  }
+  
+  .CustomNote.AP_preview_splash .Icon {
+  		padding: 20px;
+    	max-width: 100%;
+  }
+  
+  .CustomNote.AP_preview_splash .Icon img {
+  		height: 100% !important; 
+        width: auto !important;
+  }
+  
+  .CustomNote.AP_preview_splash .Content {
+        width: 100%;
+    }
+}
+
+.CustomNote {
+	box-shadow: none;
+  	border: none;
+  	background: #eee;
+  	margin: 2em 0 2em 10px;
+}
+
+.CustomNote.TeacherTips .Content .SimpleBlock > .RichText:first-of-type strong:first-of-type {
+    margin-bottom: 10px;
+    display: block;
+  	font-size: 1.15rem;
+}
+
+.CustomNote.TeacherTips .Content .SimpleBlock > .RichText strong:first-of-type + br {
+	display: none;
+}
+
+.CustomNote.TeacherTips .Content .SimpleBlock > .RichText strong:first-of-type + br + br {
+	display: none;
+}
+
+@media only screen and (max-width: 1023px) {
+  .CustomNote.TeacherTips li strong {
+  	text-align: left;
+    display: inline;
+  }
+}
+
+
+// Content the left of a margin note
+.ParaBlock .ParaBlockContent {
+	margin-right: 360px;
+}
+
+
+//Custom Note Teacher Toolbox
+.MarginNoteWrapper {
+	width: initial;
+}
+
+.MarginNoteWrapper .MarginNote {
+    margin: 0 0 40px 10px;
+  	width: 350px;
+}
+
+.MarginNoteWrapper .MarginNote {
+	padding: 0 15px 5px;
+    background: #eee;
+  	border-top: 60px solid #D22630;
+    border-radius: 6px;
+}
+
+.MarginNoteWrapper .MarginNote:hover {
+    border-top: solid 60px #D22630;
+}
+
+.MarginNote .Figure.Wrap {
+    margin: 1.5em 0;;
+}
+
+.MarginNote .Figure.Wrap:first-of-type {
+    margin: -58px 0 15px !important;
+}
+ 
+.MarginNote .RichText {
+    margin: -10px 0 20px;
+}
+
+.MarginNote .RichText strong:first-of-type {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  	font-size: 1.15rem;
+}
+
+.MarginNote .RichText:nth-child(2) strong + br {
+	display: none;
+}
+
+
+.MarginNote .RichText:nth-child(2) strong + br + br {
+	display: none;
+}
+
+.MarginNoteBody .RichText:nth-child(2) + .List {
+	margin-top: 0;
+}
+
+.MarginNoteWrapper .MarginNote .MarginNoteIcon .SVGIcon {
+    fill: #D22630;
+}
+
+.MarginNote a,
+.CustomNote a,
+.MarginNote .InLineCode,
+.CustomNote .InLineCode{
+	overflow-wrap: break-word;	
+}
+
+@media only screen and (max-width: 979px) {
+	.MarginNoteWrapper .MarginNote,
+  	.MarginNoteWrapper .MarginNote:hover {
+    	border-top: 25px solid #D22630;
+      	width: initial;
+    }
+  
+  	.MarginNoteIcon:hover {
+  		cursor: pointer;
+  	}
+  
+  	.ParaBlock .ParaBlockContent {
+		margin-right: 20px;
+	}
+}
+
+//Popup Custom Note Teacher Toolbox
+
+.PopupContentWrapper h1.Title {
+    border-radius: 0 !important;
+    background-color: #999;
+}
+
+.PopupContentWrapper .Figure {
+    margin: 40px auto 20px;
+    width: 80px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.PopupContentWrapper .Topic .Figure {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 0;
+}
+
+.PopupContentWrapper .Figure img {
+	margin: 0 auto;
+  	display: inline;
+}
+
+.PopupContent strong {
+    text-align: center;
+}
+
+.PopupContent .RichText:nth-child(2) strong {
+    margin-bottom: 10px;
+}
+
+.PopupContentWrapper .MarginNote img {
+    display: block;
+    margin: -6px auto 6px;
+}
+
+//Custom Note Teacher Tips
+
+.CustomNote.TeacherTips {
+    box-shadow: none;
+    padding: 1.5em 20px;
+    margin: 30px 0;
+    background: #eee;
+    border: none;
+    overflow: visible;
+    border-radius: 6px;
+    border-left: 75px solid #D22630;
+    position: relative;
+}
+
+.CustomNote.TeacherTips .Icon {
+    padding: 0;
+    float: none;
+    position: absolute;
+    top: 9px;
+    left: -75px;
+}
+
+.CustomNote .Icon > img {
+    width: 75px !important;
+	height: 75px !important;
+}
+
+.CustomNote.Seek,
+.CustomNote.Play,
+.CustomNote.Apply,
+.CustomNote.Rethink,
+.CustomNote.Know, {
+    border-left: 75px solid #D22630;
+    overflow: visible;
+    border-radius: 10px;
+    margin: 2em 0;
+}
+
+
+.CustomNote.Seek .Icon,
+.CustomNote.Play .Icon,
+.CustomNote.Apply .Icon,
+.CustomNote.Rethink .Icon,
+.CustomNote.Know .Icon {
+    position: absolute;
+    left: 56px;
+    opacity: .85;
+}
+
+.CustomNote.Seek .Icon > img,
+.CustomNote.Play .Icon > img,
+.CustomNote.Apply .Icon > img,
+.CustomNote.Rethink .Icon > img,
+.CustomNote.Know .Icon > img {
+    width: 60px !important;
+  	height: 60px !important;
+}
+
+@media only screen and (max-width: 1023px) {
+
+	.CustomNote.TeacherTips {	
+  		border-top: 60px solid #D22630;
+      	border-left: 0;
+    }
+  
+  	.CustomNote.TeacherTips .Content {
+  		padding: 0 .5em;
+  	}
+  
+    .CustomNote.TeacherTips .Icon {
+      	position: relative;
+      	overflow: hidden;
+      	width: 75px;
+      	margin: -82px auto 30px;
+      	top: auto;
+      	left: auto;
+    }
+  
+    .CustomNote .Icon > img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .CustomNote.TeacherTips strong {
+        margin: 0;
+    }
+  
+  	.CustomNote.TeacherTips strong:first-of-type {
+        text-align: center;
+    }
+}
+
+.CustomNote.SPARK {
+	padding: 10px;
+  	margin: 2em 0;
+    background: #D22630;
+  	border-radius: 10px;
+}
+
+.CustomNote.SPARK a {
+	color: #fff;
+  	text-align: center;
+  	display: block;
+	font-weight: bold;
+}
+
+
+//Custom Note wide margin note
+
+.CustomNote.WideMarginNote {
+	width: 400px !important;
+  	border-top: none;
+  	padding: 0;
+  	border-radius: 6px;
+  	float: right;
+}
+
+.CustomNote.WideMarginNote .Icon {
+    float: none;
+    width: 100%;
+    background: #D22630;
+  	padding: 4px 0 0;
+  	margin-bottom: 30px;
+}
+
+.CustomNote.WideMarginNote .Icon img {
+    margin: 0 auto 0;
+    display: block;
+}
+
+.CustomNote.WideMarginNote .RichText:first-of-type strong {
+	text-align: center;
+  	margin-bottom: -10px;
+  	display: block;
+}
+
+.CustomNote.WideMarginNote .Content .SimpleBlock .RichText {
+	margin: -10px 0 15px;
+}
+
+
+//Cover Image Overrides
+
+.coverImage {
+    opacity: 0;
+    padding: 10px;
+}
+
+.coverImage + .Figure img {
+    border: 1px solid #ddd;
+  	padding: 20px;
+}
+
+.coverImage + .Figure + .RichText {
+    text-align: center;
+}
+
+
+//Page Body Overrides
+/* Replaced old IQ colors with EDR and changed the transparent background image to the EDR beams*/
+
+.SidebarLeft .NavigationButton.Disabled:hover,
+.SidebarRight .NavigationButton.Disabled:hover {
+    opacity: 0;
+}
+
+#PageBody {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.SidebarLeft,
+.SidebarRight {
+    background: none; 
+}
+
+.SidebarLeft .NavigationButton:hover,
+.SidebarRight .NavigationButton:hover {
+    background: none;
+}
+
+.NavigationTree .SubTree {
+    text-align: left;
+}
+
+
+
+//Banner Image Overrides
+
+#PageBody .OneImagePage>.TopImage {
+    padding-top: 30px !important;
+  	padding-bottom: 100px;
+}
+
+#PageBody .OneImagePage>.TopImage .TopImageTitlesContainer {
+	background-image: none;
+}
+
+.TopImagePageTitle {
+    display: none;
+}
+
+.OneImagePageContent .RichText {
+    text-align: center;
+    color: #D22630;
+    line-height: 1.5em;
+    font-size: 1.75em;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+
+//Heading Overrides
+
+h2,h3,h4,h5,h6 {
+	font-family: 'aktiv-grotesk','Open Sans','Verdana', sans-serif;
+  	font-weight: 800;
+}
+
+h2 {
+	line-height: 1.2em;
+}
+
+h1 {
+	font-family: 'aktiv-grotesk', 'Roboto','Open Sans','Verdana', sans-serif;	
+  	font-size: 2.4em;
+  	color: #D22630;
+  	background: transparent;
+    margin: 3.5rem 0 .5rem;
+}
+
+h1.Title:first-of-type {
+    font-size: 2.5em;
+  	color: #fff;
+  	background: #D22630;
+  	border-radius: 10px;
+  	border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  	padding: 4px 10px;
+  	margin-bottom: 40px;
+  	text-align: left;
+}
+
+.TitledBlock h1 {
+    font-size: 2em;
+  	line-height: 1.2em;
+}
+
+@media only screen and ( min-width: 1024px) {
+	h1.Title:first-of-type {
+      margin: 0 -.5em 40px;
+  	}
+}
+
+@media only screen and ( max-width: 550px) {		
+		h1.Title:first-of-type {		
+		font-size: 10vw;		
+	}		
+}
+
+#PageBodyWrapper.FullBGImage #PageBody .Topic > .ParaBlock {
+    background-color: rgba(255,255,255,0.9);
+  	border-radius: 10px;
+}
+
+
+// xref overrides
+.Xref {
+  color: #D22630; 
+  text-decoration: none;
+}
+
+
+//Introduction Pages
+
+//Removes the padding on top to fully show the entire intro image
+#PageBody .OneImagePage > .TopImage {
+    padding-top: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+//Bolds, changes the color, and capitolizes the title
+#PageBody .OneImagePage > .TopImage .TopImagePageTitle {
+    font-weight: normal;
+    text-align: center;
+    color: #D9282f;
+    text-transform: uppercase;
+    letter-spacing: 3px;  
+    line-height: 1.1em;
+    font-size:32px;
+    position: relative;
+    top: 130px;
+}
+
+//Centers, changes the color, and capitolizes the subtitle
+#PageBody .OneImagePage > .TopImage .TopImagePageSubTitle {
+    font-weight: 900;
+    text-align: center;
+    color: #58595b;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    line-height: 1.1em;
+    font-size: 3.5em;
+    position: relative;
+    top: -38px;
+}
+
+//Removes the background gradient from the header images in Introduction elements
+#PageBody .OneImagePage > .TopImage .TopImageTitlesContainer {
+	background-image: none;
+}
+
+//Centers the Title block text
+.OneImagePageContent .TitledBlock {
+    h1 {
+		text-align: center;
+        margin: 5px 0 0;
+        font-weight: 300;
+        line-height: 1.5em;
+	}
+}
+
+
+
+//Lists
+.List .ListItems > .ListItem {
+    left: 0;
+    margin-right: 0;
+  	margin-bottom: 1em;
+}
+
+.List {
+	margin-top: 1.5em;
+}
+
+.List .ListItems {
+  margin-bottom: 1.5em;  
+}
+
+.List .ListItems > .ListItem::before {
+    margin-left: -2.5em;
+    width: 2.5em;
+}
+
+.ListItem .RichText + .List {
+    margin-top: 0;
+}
+
+.EducationalObjective ul {
+    padding-left: 0em !important;
+}
+
+.EducationalObjective ul > .EnablingObjective {
+    left: 1em;
+}
+
+.List .ListPreamble {
+    margin: 1.5em 0;
+}
+
+
+// Main Menu
+
+#MainMenuWrapper {
+  background-color: #f5f5f5;
+  box-shadow: none;
+}
+
+#PageMain #MainMenuWrapper.Open {
+	min-width: 0 !important;
+}
+
+#MainMenuWrapper .Bottom {
+	overflow-x: hidden;
+}
+
+.InnerHeader .MenuIcon .SVGIcon {
+    fill: #D22630;
+}
+
+.InnerHeader .MenuIcon {
+    background: #eee;
+}
+
+#Item1 {
+    display: none;
+}
+
+.NavigationTree .NavigationNode.Collapsable {
+  border-top: 1px solid #ccc;
+}
+
+.NavigationTree .NavigationNode.Collapsable:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+.NavigationTree .NavigationNode .NavigationTreeItem {
+  color: #aaa;
+  padding: 10px 13px 10px 32px;
+}
+
+.NavigationTree .NavigationNode.Active > .NavigationTreeItem {
+    color: #424242;
+}
+
+.NavigationTree .NavigationNode.Active > .NavigationTreeItem::before {
+    background: #424242 !important;
+}
+
+.NavigationTree .NavigationNode.Active > .NavigationTreeItem::before {
+    border: 1px #424242 solid !important;
+}
+
+.NavigationTree .NavigationNode.Active > .NavigationTreeItem .NavigationExpansionIcon {	
+	fill: #424242;		
+}		
+
+.NavigationTree .NavigationNode .NavigationTreeItem:hover {
+	color: #424242 !important;
+}
+
+.NavigationTree .NavigationNode .NavigationTreeItem:hover .NavigationExpansionIcon {	
+	fill: #424242;		
+}		
+
+.NavigationTree .NavigationNode .NavigationTreeItem::before {
+    /*border: 1px solid #D22630;
+  	left: 32px;*/
+  	display: none !important;
+}
+
+.NavigationTree .NavigationNode .NavigationTreeItem .NavigationExpansionIcon {	
+	fill: rgb(210,38,48);		
+}		
+			
+#MainMenuWrapper .Top .MenuIcon .SVGIcon, #MainMenuWrapper .Top .ExitButtonLink .SVGIcon {		
+	fill: #D22630 !important;		
+}		
+			
+#MainMenuWrapper .Top .MenuIcon:hover .SVGIcon, #MainMenuWrapper .Top .ExitButtonLink:hover .SVGIcon {		
+	fill: #D22630 !important;		
+}
+
+#MainMenuWrapper .Top .ComponentLink .SVGIcon {
+	fill: #D22630 !important;
+}
+
+#MainMenuWrapper .Top .ComponentLink.Active .SVGIcon {
+	fill: #424242 !important;
+}
+
+#MainMenuWrapper .Top .ComponentLink:hover .SVGIcon {
+	fill: #424242 !important;
+}
+
+/* Calculator and Icon */
+
+#MainMenuWrapper .ComponentLink .SVGIcon.ComponentLinkIcon.CalculatorIcon {
+    overflow: visible;
+    opacity: .8;
+}
+
+#MainMenuWrapper .ComponentLink.CalculatorLink:hover .CalculatorIcon {
+    opacity: 1;
+}
+
+.CalculatorContainer .Row .Button {
+    background-color: #D22630;
+}
+
+.CalculatorContainer .Row .Button:hover {
+    background-color: #999;
+}
+
+.CalculatorLink {
+
+    background: rgba(17,17,17,.35);
+}
+
+.CalculatorContainer .CalculatorExpression .CalculatorExpressionLine {
+    border-color: #ccc;
+ 	border: 1px solid #ccc;
+}
+
+//Slidehsow Overrides
+
+.Slideshow {
+	padding-bottom: 100px;
+}
+
+.Slideshow .SlideshowSlides {
+    background-color: #fff;
+}
+
+.Slideshow .SlideshowSlides .SlideshowSlide {
+  	background-color: #fff;  
+  	height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.Slideshow.FadeAnimation .SlideshowSlides .SlideshowSlide.ActiveSlide {
+  border: 5px solid #D22630;
+  border-bottom: none;
+}
+
+.Slideshow .SlideshowSlides .SlideshowSlide .Figure {
+	padding-bottom: 60px;
+}
+
+.Slideshow.ShowCaption .SlideshowSlide .Figure .Caption {
+    display: block;
+  	background-color: rgba(0,0,0,0.4);
+  	padding: 10px;
+  	width: calc(100% - -1px) !important;
+}
+
+.Slideshow .SlideshowNavigationButtons .SlideshowNavigationButtonPrev {
+    left: 5px;
+}
+
+.Slideshow .SlideshowNavigationButtons .SlideshowNavigationButtonNext {
+    right: 5px;
+}
+
+.Slideshow .SlideshowFooter .SlideshowThumbnails ul li::after {
+    background: #D22630 none repeat scroll 0 0;
+}
+
+.Slideshow .SlideshowFooter {
+    height: auto;
+  	top: 74px;
+}
+
+.Slideshow .SlideshowFooter .SlideshowPagination .PaginationIcon {
+    margin: 0px 2px;
+}
+
+.Slideshow .SlideshowFooter .SlideshowPagination {
+	top: -20px;
+}
+
+.Slideshow .SlideshowFooter .SlideshowPagination ul {
+	background: #D22630;
+  	margin: 20px 0 0 0;
+}
+
+.Slideshow .SlideshowFooter .SlideshowThumbnails {
+    height: auto;
+}
+
+.Slideshow .SlideshowFooter .SlideshowThumbnails ul {
+    margin: 28px 0 0 0;
+}
+
+.PopupWrapper {
+    overflow: hidden;
+    padding: 0;
+}
+
+.PopupWrapper .PopupTitlebar {
+    background: #666;
+  	z-index: 100;
+}
+
+.PopupWrapper .PopupContentWrapper {
+    padding: 20px 10px;
+}
+
+// Code element overrides
+
+.ProgramCode {
+    color: #ddd;
+}
+
+// table overrides
+
+.Table .TableCell .TableCellContent .RichText {
+    margin: 0;
+}
+
+// The rule below corrects weird spacing issues in image tables at mobile resolutions. If we decide we need the .TableHeader class, we will need to create a table theme.     
+.Table .TableHeader {
+    display: none !important;
+}
+
+
+// procedure overrides
+
+.Step.Open {
+    border: 1px solid #ddd;
+}
+
+.Procedure .Step .StepHead {
+    border-bottom: 1px solid #ddd;
+  	color: #D22630;
+}
+
+.StepUserAction {
+    background-color: #f9f9f9;
+}
+
+.Procedure .Step .StepHead > .ExpandIcon,		
+.Procedure .Step.Open > .StepHead > .ExpandIcon {		
+	fill: #D22630;		
+}
+
+// center movie element
+
+.Procedure .Step .Movie.Wrap {
+    margin: 1.5em auto;
+}
+
+
+
+// Image caption overrides
+
+// By default, captions take the width of the figure. This causes the captions of narrow images to wrap. To prevent unnecessary wrapping, the rule below sets a minimum caption width.                  
+.Caption {
+    line-height: 1.25em;
+  	width: 100% !important;
+  	text-align: center;
+}
+
+// Titled Block overrides
+
+section.TitledBlock + section.TitledBlock {
+	//border-bottom: 1px solid #ccc;
+}
+
+section.TitledBlock + section.TitledBlock:last-of-type {
+	border: none;
+}
+
+section.TitledBlock .Figure.Wrapleft,
+section.TitledBlock .Figure.Wrapright {
+	margin-top: 0;
+}
+
+section.TitledBlock .Figure.Wrapleft {
+	margin-left: 0;
+}
+
+section.TitledBlock .Figure.Wrapright {
+	margin-right: 0;
+}
+
+@media only screen and ( max-width: 768px) {
+	section.TitledBlock .Figure.Wrapleft,
+	section.TitledBlock .Figure.Wrapright {
+    	margin: 0 auto;
+    	width: 300px;
+      	float: none;
+	}
+}
+
+
+// Figure img
+
+.Figure img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+
+// Notepad
+.NotebookPopupContentContainer {
+    display: none;
+}
+
+
+// Parts List Custome Note
+
+.CustomNote.Parts_List .Figure .Caption {
+    text-align: center;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.CustomNote.Parts_List  {
+    box-shadow: none;
+    padding: .5em 0;
+    margin: 1.5em 0;
+}
+
+.CustomNote.Parts_List .Content {
+    padding: 0;
+}
+
+.CustomNote.Parts_List .Figure {
+    width: 30.3%;
+    margin: 20px 1.5% 40px !important;
+}
+
+.CustomNote.Parts_List .Figure img {
+  	width: 100% !important;
+  	height: auto !important;
+}
+
+
+@media only screen and ( min-width: 551px) and (max-width: 874px) {
+  .CustomNote.Parts_List .Figure {
+    width: 44%;
+    margin: 20px 3% 40px !important;
+  }
+}
+
+@media only screen and ( max-width: 550px) {
+  .CustomNote.Parts_List .Figure {
+    width: 90%;
+    max-width: 250px;
+    margin: 20px auto 40px !important;
+    float: none
+  }
+}
+
+// Quiz styles
+
+@media only screen and ( max-width: 720px) {
+	.QuestionInnerWrap .QuestionStem h3 div.RichText {
+    	font-size: 1.2em;
+    }
+}
+
+// Submit button for assessment questions
+
+.MultipleChoiceInnerWrap .MultipleChoiceQuestionOptions .MultipleChoiceQuestionOptionWrapper.Enabled.Selected {
+    background: rgb(247, 212, 214);
+}
+
+// This makes all of the question boxes the same width
+
+.QuestionInnerWrap {
+    width: 100%;
+}
+
+
+// Navigation Button shape
+
+#NavigationButtonPrevious {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#NavigationButtonNext {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.InnerFooter .Button {
+	background: #D22630;
+}
+
+.Button {
+	border: 2px solid #D22630;
+}
+
+.CourseProgressLink {
+    background-color: #D22630;
+}
+
+.InnerFooter .Button:hover {
+    color: #D22630;
+}
+
+.InnerFooter .Button:hover .SVGIcon {
+    fill: #D22630;
+}
+
+// SidebarLeft temporary spacing fix (It was way too wide)
+
+#PageMain .SidebarLeft.Region.Closed {
+    min-width: 0 !important;
+}
+  
+#PageMain .SidebarLeft.Region.Open {
+  	min-width: 300px !important;
+}
+
+@media only screen and ( min-width: 1441px) {
+  #PageMain .SidebarLeft {
+      margin-right: 40px;
+      position: relative;
+      width: 33.33%;
+      max-width: 427px;	
+  }
+  
+  #PageMain .SidebarLeft.Region.Closed {
+      border-right: none;
+  }
+}
+
+// SidebarLeft color fix (Remove hard to read gray text)
+
+#MainMenuWrapper {
+	border-right: 1px solid #ccc;
+}
+
+#MainMenuWrapper .ComponentContent.Visible {
+	min-width: 0;
+}
+
+#MainMenu .NavigationTreeItem {
+    color: #D22630;
+    opacity: .85;
+  	font-size: 14.4px;
+}
+
+#MainMenu .NavigationNode.Active > .NavigationTreeItem {
+    color: #424242 !important;
+    font-weight: bold !important;
+    opacity: 1;
+}
+
+#MainMenuWrapper .Top .ComponentLink .SVGIcon, #MainMenuWrapper .Top .ExitButtonLink .SVGIcon {
+    fill: rgb(210,38,48);;
+}
+
+// Glossary styles
+
+.GlossaryContainer .Contents .Letter {
+	background: #ccc;
+	padding: 0.4em 1.5em;
+}
+
+.GlossaryItem {
+    margin-top: 1.5em;
+}
+
+.GlossaryContainer .Contents .LetterTermList .LetterListItem {
+    padding: 1em 2em;
+    text-align: left;
+  	border-bottom: 1px solid #ccc;
+  	margin-top: 0;
+  	max-width: none;
+}
+
+.GlossaryContainer .Contents .LetterTermList .LetterListItem:hover {
+   border-bottom: 1px solid #ccc;
+}
+
+.GlossaryContainer .Contents .LetterTermList .LetterListItem .GlossaryItemTerm {
+	color: #424242;
+  	font-weight: bold;
+}
+
+.GlossaryContainer .Contents .LetterTermList .LetterListItem .GlossaryItemTerm:hover {
+	color: #D22630;
+    text-decoration: none;
+}
+
+.GlossaryItem h2.Term,
+.GlossaryItem h2.Term:hover{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.GlossaryContainer .Index {
+	right: 12px;
+}
+
+.GlossaryContainer .Index a {
+	color: #D22630;
+}
+
+.GlossaryContainer .Index a:hover {
+	color: #424242;
+  	text-decoration: none;
+}
+
+.Definition .RichText {
+    margin-top: 5px;
+  	color: #424242;
+  	line-height: 1.3;
+}
+
+// Added extra space to the bottom of the page (sometimes the nav would cover content)
+
+#PageBody > div, .PageBody > div {
+    padding-bottom: 80px;
+}
+
+@media only screen and ( min-width: 1024px) {
+    #PageBody > div, .PageBody > div {
+    	padding: 1.5em 3em 80px;
+  	}
+}
+
+
+// Page Up icon
+
+.VisualCueLink {
+    background-color: #D22630;
+}
+
+
+// Code font style
+body .SyntaxArg {
+    color: #000;
+    font-weight: bold;
+  	font-style: normal;
+}
+
+body .SyntaxArg:before {
+    content: "";
+    margin-left: .1rem;
+}
+
+body .SyntaxArg:after {
+    content: "";
+    margin-right: .2rem;
+}
+
+.MarginNote .ListItem strong {
+    display: inline !important;
+}
+
+.Question .Figure .FigureImage {
+    display: inline;
+}
+
+
+/* Turn off logo at the bottom of the sidebar */
+#MainMenuWrapper .After {
+  background: none;
+}
+
+.PopupContent .Figure {
+	width: initial;
+}
